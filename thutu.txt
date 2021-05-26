@@ -1,0 +1,31 @@
+number 0
+name 1
+born 2
+gt 3
+qt 4
+nguyenquan1 5
+nguyenquan2 6
+thuongtru1 7
+thuongtru2 8
+out_date 9
+note1 10
+note2 11
+create 12
+dantoc 13
+tongiao 14
+cmt_sau 15 
+cmt_truoc 16
+name1 17
+cancuoc_truoc 18
+cancuoc_sau 19
+mahoa 20
+chip_sau 21
+chip_truoc 22
+23 noi cap
+24 face
+
+1 detect
+2 rotate
+3 ocr
+4 seg
+7 face
