@@ -176,7 +176,6 @@ class Process:
             results['address_commune'], results['address_district'], results['address_province'] = self.extract_address(
                 results['address'])
             result_card['result'].append(results)
-
         return result_card
 
     def authenticate(self, card_name, face_name):
@@ -208,7 +207,7 @@ class Process:
                 'address_commune': '',
                 'home_province': '',
                 'home_district': '',
-                'home_commune': ''
+                'home_commune': '',
             }
             # check xem co ton tai face ko
             if face_in_card is None or face is None:
@@ -250,6 +249,7 @@ class Process:
                                     if prev_sub_ocr.isnumeric() is False:
                                         continue
                                     date_result.append('/')
+                                    i += 1
                             prev_sub_ocr = c
                         s = ''
                         s = s.join(date_result[1:])
@@ -284,6 +284,4 @@ class Process:
             results['address_commune'], results['address_district'], results['address_province'] = self.extract_address(
                 results['address'])
             result_card['result'].append(results)
-
         return result_card
-

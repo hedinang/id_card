@@ -313,14 +313,12 @@ class IResNet(nn.Module):
         self.features = nn.BatchNorm1d(num_features, eps=1e-05)
         nn.init.constant_(self.features.weight, 1.0)
         self.features.weight.requires_grad = False
-
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
                 nn.init.normal_(m.weight, 0, 0.1)
             elif isinstance(m, (nn.BatchNorm2d, nn.GroupNorm)):
                 nn.init.constant_(m.weight, 1)
                 nn.init.constant_(m.bias, 0)
-
         if zero_init_residual:
             for m in self.modules():
                 if isinstance(m, IBasicBlock):
@@ -388,5 +386,4 @@ class Face:
     def __call__(self, face1, face2):
         face1 = self.model(face1.to(self.device))
         face2 = self.model(face2.to(self.device))
-        return (self.similarity(face1, face2) > 0.8).item()
-
+        return (self.similarity(face1, face2) > 0.5).item()
